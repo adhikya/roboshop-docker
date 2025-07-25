@@ -1,5 +1,5 @@
 FROM maven
-WORKDIR /opt/service
+WORKDIR /opt/server
 COPY pom.xml .
 COPY src /opt/server/src
 RUN mvn clean package
