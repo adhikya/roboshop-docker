@@ -1,9 +1,9 @@
 FROM maven
 WORKDIR /opt/service
 COPY pom.xml .
-COPY src .
+COPY src /opt/server/src
 RUN mvn clean package
-RUN mv /opt/server/target/shiping-1.0.jar /opt/server/shipping.jar
+RUN mv /opt/server/target/shiping-1.0.jar /opt/server/shipping.jar 
 ENV CART_ENDPOINT="cart:8080" \
     DB_HOST="mysql"
 CMD ["java","-jar", "shipping.jar"]    
